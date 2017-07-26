@@ -1,6 +1,17 @@
 body {
     background:#EDEAE5;
+    margin: 0;
+    padding: 0;
 }
-.hero img {
-    max-height: 350px;
+
+.hero {
+    height: 350px;
+    width: 100%;
+    background-image: url("../images/pencil.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero span {
+    color: #ffffff;
+    text-align: center;
 }
