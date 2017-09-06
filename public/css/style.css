@@ -17,10 +17,12 @@ nav {
     text-align: center;
     color: #ffffff;
 }
-.product-image {
+.feature {
+    margin: 0 auto;
+}
+.product-image img{
     width: 30%;
-    height: 200px;
+    height: auto;
     float: left;
     margin: 0 10px;
-
 }
