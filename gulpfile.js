@@ -21,7 +21,7 @@ gulp.task('start', function () {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function () {
-    gulp.src('app/sass/**/*.scss')
+    gulp.src('app/stylesheets/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({ stream: true }))
@@ -29,7 +29,7 @@ gulp.task('sass', function () {
 
 //Watch task
 gulp.task('watch', function () {
-    gulp.watch('app/sass/**/*.scss', ['sass']);
+    gulp.watch('app/stylesheets/**/*.scss', ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
