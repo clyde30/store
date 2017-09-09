@@ -4,8 +4,12 @@ body {
     padding: 0;
 }
 
+.header {
+    margin: 0 15px;
+}
+
 nav {
-    float: right;
+    /* float: right; */
 }
 
 .hero {
@@ -18,7 +22,7 @@ nav {
     color: #ffffff;
 }
 .feature {
-    margin: 0 auto;
+    margin: 0 15px;
 }
 .product-image img{
     width: 30%;
