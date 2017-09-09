@@ -1,22 +1,27 @@
-// Dependencies
 var gulp = require('gulp');
-var nodemon = require('gulp-nodemon');
-var notify = require('gulp-notify');
-var livereload = require('gulp-livereload');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
-// Task
-gulp.task('default', function() {
-	// listen for changes
-	livereload.listen();
-	// configure nodemon
-	nodemon({
-		// the script to run the app
-		script: 'server.js',
-		ext: 'js'
-	}).on('restart', function(){
-		// when the app has restarted, run livereload.
-		gulp.src('server.js')
-			.pipe(livereload())
-			.pipe(notify('Reloading page, please wait...'));
-	})
-})
+// Static Server + watching scss/html files
+gulp.task('browser-sync', ['sass'], function () {
+
+    browserSync.init({
+        server: "./app"
+    });
+});
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function () {
+    gulp.src('app/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('app/css'))
+        .pipe(browserSync.reload({ stream: true }))
+});
+
+//Watch task
+gulp.task('watch', function () {
+    gulp.watch('app/sass/**/*.scss', ['sass']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('default', ['watch', 'sass', 'browser-sync']);
