@@ -2,6 +2,7 @@ body {
     background:#EDEAE5;
     margin: 0;
     padding: 0;
+    font-family: futura;
 }
 
 .header {
@@ -10,10 +11,17 @@ body {
 
 nav {
     /* float: right; */
+    width: 100%;
+}
+nav li {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
 }
 nav a {
     color: #000000;
     text-decoration: none;
+    font-size: 1.5em;
 }
 
 .hero {
