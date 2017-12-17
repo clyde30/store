@@ -11,15 +11,23 @@ body {
 nav {
     /* float: right; */
 }
+nav a {
+    color: #000000;
+    text-decoration: none;
+}
 
 .hero {
-    height: 350px;
+    /* height: 350px; */
     width: 100%;
-    background-image: url("../images/pencil.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #000000;
+}
+.logo {
+    height: 300px;
     text-align: center;
-    color: #ffffff;
+    padding-top: 50px;
+}
+.logo img {
+    height: 85%;
 }
 .feature {
     margin: 0 15px;
